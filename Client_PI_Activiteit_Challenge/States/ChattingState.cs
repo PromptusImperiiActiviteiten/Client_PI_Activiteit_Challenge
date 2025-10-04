@@ -13,7 +13,7 @@ namespace Showcase_Client_PI_Activiteit.States
 
         public override void HandleMessage(string incommingServerMessage)
         {
-            FormsCommands.ShowMessageInChatbox(incommingServerMessage);
+
         }
     }
 }
