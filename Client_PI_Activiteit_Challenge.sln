@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client_PI_Activiteit_Challenge", "Client_PI_Activiteit_Challenge\Client_PI_Activiteit_Challenge.csproj", "{D6FE308E-6F26-4424-A0BF-E9215E995D11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6FE308E-6F26-4424-A0BF-E9215E995D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6FE308E-6F26-4424-A0BF-E9215E995D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6FE308E-6F26-4424-A0BF-E9215E995D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6FE308E-6F26-4424-A0BF-E9215E995D11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F1BDCFF-115B-429C-8669-1A4311B4AA8A}
+	EndGlobalSection
+EndGlobal
