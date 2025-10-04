@@ -23,9 +23,6 @@ namespace Showcase_Client_PI_Activiteit
 
         public void ConnectToServer(string ipAddress, int port)
         {
-            client = new TcpClient(ipAddress, port);
-            stream = client.GetStream();
-            Console.WriteLine("Connected to the server.");
 
             if (stream !=null && stream.CanRead)
             {
@@ -37,14 +34,7 @@ namespace Showcase_Client_PI_Activiteit
 
         public void ReadMessages()
         {
-            byte[] buffer = new byte[1024];
-            int bytesRead;
 
-            while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
-            {
-                string incommingServerMessage = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                currentActiveState.HandleMessage(incommingServerMessage);
-            }
         }
 
         public void ChangeState(AbstractState newState) {
