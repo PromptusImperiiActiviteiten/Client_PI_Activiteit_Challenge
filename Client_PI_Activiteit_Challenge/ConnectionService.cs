@@ -50,8 +50,13 @@ namespace Showcase_Client_PI_Activiteit
             /*
              * Zorg dat de stream continu wordt uitgelezen en berichten worden gebruikt 
              * om het juiste resultaat te krijgen
-             * 
-             * 
+             *
+             * Zorg dat het eerste bericht die hier worden afgehandeld begind met een "211:" protocol. 
+             * Als dit niet zo is wordt er niets gedaan, als dit wel zo is kun je de chatroom openen, 
+             * het bericht laten zien in de chatbox.
+             *
+             * Zorg hierna dat de alle berichten worden getoont in de chatbox
+             *
              * Bonus challenge: Gebruik de Currentstate om het nog makkelijker en uitbreidbaar te maken
              */
         }
