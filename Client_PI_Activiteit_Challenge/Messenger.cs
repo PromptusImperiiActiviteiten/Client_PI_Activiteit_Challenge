@@ -12,48 +12,24 @@ namespace Showcase_Client_PI_Activiteit
     {
         public static void SendChatMessage(string rawOutgoingChatMessage, NetworkStream clientNetworkStream)
         {
-            string outgoingChatMessage;
-            string commandRecognissionRegexString = @"^\/.*[\s|:]";
-            Regex commandRecognissionRegex = new Regex(commandRecognissionRegexString);
-
-            FormsCommands.ShowMessageInChatbox("You:" + rawOutgoingChatMessage);
-
-            if (commandRecognissionRegex.IsMatch(rawOutgoingChatMessage))
-            {
-                outgoingChatMessage = FindServerCommand(rawOutgoingChatMessage);
-            }
-            else {
-                outgoingChatMessage = "101:" + rawOutgoingChatMessage;
-            }
-
-            if (clientNetworkStream != null && clientNetworkStream.CanWrite)
-            {
-                byte[] data = Encoding.UTF8.GetBytes(outgoingChatMessage);
-                clientNetworkStream.Write(data, 0, data.Length);
-            }
+            /*
+             * Zorg dat deze functie berichten kan versturen met een "101:" protocol
+             * en dat het bericht getoond wordt in jou eigen chatbox
+             *
+             * Bonus Challenge 1: zet iets van "ik:" of "You:" in de chatbox
+             * en zorg dat het protocol gedeelte niet wordt getoond.
+             * 
+             * Bonus Challenge 2: Zorg dat het systeem een "102:" bericht stuurt als 
+             * jouw bericht begind met "/whisper:[naam];".
+             * Dit stuurt namelijk het bericht alleen naar degene met die naam.
+             */
         }
 
         public static void SendInitializingMessage(string newClientName, NetworkStream clientNetworkStream)
         {
-            if (clientNetworkStream != null && clientNetworkStream.CanWrite)
-            {
-                byte[] data = Encoding.UTF8.GetBytes("111:" + newClientName);
-                clientNetworkStream.Write(data, 0, data.Length);
-            }
-        }
-
-        private static string FindServerCommand(string potentialCommand) {
-            string outgoingMessage;
-
-            switch (potentialCommand) {
-                case { } when potentialCommand.StartsWith("/whisper:"):
-                    string messageWithoutCommand = potentialCommand.Substring(potentialCommand.IndexOf(":")+1);
-                    outgoingMessage = "102:" + messageWithoutCommand;
-                    return outgoingMessage;
-                default:
-                    outgoingMessage = "121:" + potentialCommand;
-                    return outgoingMessage;    
-            }
+            /*
+             *  Zorg dat deze functie een bericht verstuurd met het "111:" protocol
+             */
         }
     }
 }

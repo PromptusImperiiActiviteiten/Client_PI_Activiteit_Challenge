@@ -13,7 +13,14 @@ namespace Showcase_Client_PI_Activiteit.States
 
         public override void HandleMessage(string incommingServerMessage)
         {
-            FormsCommands.ShowMessageInChatbox(incommingServerMessage);
+             /* 
+              * Dit is deel van een Bonus challenge, 
+              * hij is goed te doen maar niet vereist (zie ConnectionService.cs -> ReadMessages() )
+              * 
+              * zorg dat binnenkomende berichten worden getoond in de chatbox, 
+              * als je dat mooier vindt kun je kijken of je het protocol 
+              * gedeelte van een bericht af kan halen voor hij wordt getoont in de chatbox.
+              */
         }
     }
 }
