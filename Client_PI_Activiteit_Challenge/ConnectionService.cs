@@ -23,6 +23,16 @@ namespace Showcase_Client_PI_Activiteit
 
         public void ConnectToServer(string ipAddress, int port)
         {
+            /*
+             * Zorg dat er een nieuwe TCPclient wordt aangemaakt, dat deze wordt 
+             * gelinked aan het "client" attribuut, en dat de Networkstream van deze client 
+             * wordt opgehaald en wordt geliked aan het "stream attribuut."
+             * 
+             * 
+             * Let op: laat de code hier onder staan,
+             * dit zorgt er voor dat berichten uitgelezen kunnen worden
+             * zonder dat het programma vast loopt
+             */
 
             if (stream !=null && stream.CanRead)
             {
@@ -34,7 +44,21 @@ namespace Showcase_Client_PI_Activiteit
 
         public void ReadMessages()
         {
+            byte[] buffer = new byte[1024];
+            int bytesRead;
 
+            /*
+             * Zorg dat de stream continu wordt uitgelezen en berichten worden gebruikt 
+             * om het juiste resultaat te krijgen
+             *
+             * Zorg dat het eerste bericht die hier worden afgehandeld begind met een "211:" protocol. 
+             * Als dit niet zo is wordt er niets gedaan, als dit wel zo is kun je de chatroom openen, 
+             * het bericht laten zien in de chatbox.
+             *
+             * Zorg hierna dat de alle berichten worden getoont in de chatbox
+             *
+             * Bonus challenge: Gebruik de Currentstate om het nog makkelijker en uitbreidbaar te maken
+             */
         }
 
         public void ChangeState(AbstractState newState) {
