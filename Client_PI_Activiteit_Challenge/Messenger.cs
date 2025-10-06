@@ -1,20 +1,18 @@
-﻿using Showcase_Client_PI_Activiteit.WindowsForms;
-using System.Diagnostics.CodeAnalysis;
-using System.Net.Sockets;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Web;
+﻿using System.Net.Sockets;
 
 
 namespace Showcase_Client_PI_Activiteit
 {
     class Messenger
     {
-        public static void SendChatMessage(string rawOutgoingChatMessage, NetworkStream clientNetworkStream)
-        {
+        public static void SendChatMessage(string rawOutgoingChatMessage, NetworkStream clientNetworkStream) {
+            byte[] data;
+            string messageToSend;
             /*
-             * Zorg dat deze functie berichten kan versturen met een "101:" protocol
-             * en dat het bericht getoond wordt in jou eigen chatbox
+             * Zorg dat het bericht dat verstuurd gaat worden opgeslagen wordt in het "messageToSend" variabelen
+             * Dit bericht bestaat uit het protocol "101:" gevolgd door het bericht (hint: dit is het rawOutgoingChatMessage parameter)
+             * Zet de string die verstuurd wordt om naar een byte array en sla deze op in de "data" variabelen
+             * Stuur het bericht door naar de Server en toon het bericht in jouw eigen chatbox.
              *
              * Bonus Challenge 1: zet iets van "ik:" of "You:" in de chatbox
              * en zorg dat het protocol gedeelte niet wordt getoond.
@@ -25,10 +23,14 @@ namespace Showcase_Client_PI_Activiteit
              */
         }
 
-        public static void SendInitializingMessage(string newClientName, NetworkStream clientNetworkStream)
-        {
+        public static void SendInitializingMessage(string newClientName, NetworkStream clientNetworkStream) {
+            byte[] data;
+            string messageToSend;
             /*
-             *  Zorg dat deze functie een bericht verstuurd met het "111:" protocol
+             * Zorg dat het bericht dat verstuurd gaat worden opgeslagen wordt in het "messageToSend" variabelen
+             * Dit bericht bestaat uit het protocol "111:" gevolgd door de opgegeven naam (hint: dit is het newClientName parameter)
+             * Zet de string die verstuurd wordt om naar een byte array en sla deze op in de "data" variabelen
+             * Stuur tenslotte het bericht door naar de Server
              */
         }
     }
